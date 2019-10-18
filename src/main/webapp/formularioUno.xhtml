@@ -10,40 +10,35 @@
         <h:form>
             <fieldset>
                 <h:outputText value="Nombre: "></h:outputText> 
-                <h:inputText id="nombre" value="#{formularioUno.nombre}" label="Nombre requerido">
-                     <f:validateRequired />
+                <h:inputText id="nombre" value="#{formularioUno.nombre}" label="Nombre requerido" required="true" requiredMessage="requerido">
                      <f:validateLength minimum="5" maximum="40"></f:validateLength>
                 </h:inputText>
                 <h:message for="nombre" style="color: red"></h:message>
                 <br></br><br></br>
                 
                 <h:outputText value="Edad: "></h:outputText> 
-                <h:inputText id="edad" value="#{formularioUno.edad}" label="entre 18 y 80 años">
-                     <f:validateRequired />
+                <h:inputText id="edad" value="#{formularioUno.edad}" label="entre 18 y 80 años" required="true" requiredMessage="requerido">
                      <f:validateLongRange minimum="18" maximum="80"></f:validateLongRange>
                 </h:inputText>
                 <h:message for="edad" style="color: red"></h:message>
                 <br></br><br></br>
                 
                 <h:outputText value="Correo:  "></h:outputText> 
-                <h:inputText id="correo" value="#{formularioUno.correo}" label="no es un correo">
-                     <f:validateRequired />
+                <h:inputText id="correo" value="#{formularioUno.correo}" label="no es un correo" required="true" requiredMessage="requerido">
                      <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
                 </h:inputText>
                 <h:message for="correo" style="color: red"></h:message>
                 <br></br><br></br>
                 
                 <h:outputText value="celular "> </h:outputText>
-                <h:inputText id="celular" value="#{formularioUno.celular}" label="No es un telefono valido">
-                     <f:validateRequired />
+                <h:inputText id="celular" value="#{formularioUno.celular}" label="No es un telefono valido" required="true" requiredMessage="requerido">
                      <f:validateLength minimum="10" maximum="12"/>
                 </h:inputText>
                 <h:message for="celular" style="color: red"></h:message>
                 <br></br><br></br>
                 
                 <h:outputText value="fecha de nacimiento: " > </h:outputText>
-                <h:inputText  value="#{formularioUno.fecha}" id="fecha" label="No es una fecha correcta">
-                    <f:validateRequired />
+                <h:inputText  value="#{formularioUno.fecha}" id="fecha" label="No es una fecha correcta" required="true" requiredMessage="requerido">
                     <f:convertDateTime pattern="dd-mm-yyyy"/>
                 </h:inputText>
                 <h:message for="fecha" style="color: red"></h:message>
@@ -52,8 +47,7 @@
                 <br></br><br></br>
                 
                 <h:outputText value="Sueldo en Colombia"/>
-                <h:inputText value="#{formularioUno.sueldo}" id="sueldo" label="requerido en pesos colombianos">
-                    <f:validateRequired />
+                <h:inputText value="#{formularioUno.sueldo}" id="sueldo" label="requerido en pesos colombianos" required="true" requiredMessage="requerido">
                     <f:convertNumber currencySymbol="$" groupingUsed="true"  
                                       type="currency" 
                                      locale="es_CO"/>
